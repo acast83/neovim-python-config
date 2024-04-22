@@ -16,6 +16,8 @@
 
 ## Additional commands
 
+```
 :!pip install neovim
 :!pip install debugpy
 :!pip install isort
+```
