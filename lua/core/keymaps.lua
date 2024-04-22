@@ -26,6 +26,7 @@ keymap.set("n", "<leader>to", ":tabnew<CR>") -- open a new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close a tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
+keymap.set("n", "<leader>bd", ":confirm bd<CR>", { desc = "Close current buffer" })
 
 -- Diff keymaps
 keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
@@ -147,17 +148,40 @@ local opts = { noremap = true, silent = true }
 
 -- Debugging with Function Keys
 keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>", opts)
 keymap("n", "<F8>", "<cmd>lua require'dap'.clear_breakpoints()<CR>", opts)
 keymap("n", "<F7>", "<cmd>lua require'dap'.repl.toggle()<CR>", opts)
+vim.api.nvim_set_keymap('n', '<Leader>B', "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { noremap = true, silent = true })
 
 -- init.lua configuration snippet
 vim.opt.cursorline = true  -- Highlight the entire line of the cursor
 
-require('dapui').setup()  -- Set up dap-ui for a better debugging interface
+require('dapui').setup( require("dapui").setup({
+  layouts = {
+    {
+      elements = {
+        -- Elements can be "scopes", "breakpoints", "stacks", "watches", or "repl"
+        { id = "scopes", size = 0.25 },  -- Adjust size as a fraction of the screen
+        { id = "breakpoints", size = 0.25 },
+        { id = "stacks", size = 0.25 },
+        { id = "watches", size = 0.25 }
+      },
+      size = 40,  -- Specifies the size of the sidebar
+      position = "left"  -- Sidebar on the left
+    },
+    {
+      elements = {
+        "repl"
+      },
+      size = 10,  -- Smaller size for the lower window
+      position = "bottom"  -- Command line REPL at the bottom
+    }
+  }
+})
+)  -- Set up dap-ui for a better debugging interface
 
 require('nvim-dap-virtual-text').setup({
     enabled = true,  -- Enable virtual text
