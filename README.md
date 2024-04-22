@@ -1,6 +1,6 @@
 # My personal neovim configuration
 
-## starting point:
+## Starting point:
 
 
 - [Neovim Starter Kit for Python](https://github.com/bcampolo/nvim-starter-kit/tree/python#neovim-starter-kit-for-python-)
