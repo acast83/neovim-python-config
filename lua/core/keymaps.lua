@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.o.mouse = 'a'
 local keymap = vim.keymap
---
+
 -- General keymaps
 keymap.set("i", "jk", "<ESC>") -- exit insert mode with jk 
 keymap.set("i", "ii", "<ESC>") -- exit insert mode with ii
