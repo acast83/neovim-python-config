@@ -13,3 +13,9 @@
 - [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) - Needed for system clipboard support
 - [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [Python](https://www.python.org/) - Version 3.8 or later
+
+## Additional commands
+
+:!pip install neovim
+:!pip install debugpy
+:!pip install isort
