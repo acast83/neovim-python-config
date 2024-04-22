@@ -3,7 +3,7 @@
 ## starting point:
 
 
-- [True Color Terminal](https://github.com/bcampolo/nvim-starter-kit/tree/python#neovim-starter-kit-for-python-)
+- [Neovim Starter Kit for Python](https://github.com/bcampolo/nvim-starter-kit/tree/python#neovim-starter-kit-for-python-)
 
 ## Prerequisites ##
 - [True Color Terminal](https://gist.github.com/kurahaupo/6ce0eaefe5e730841f03cb82b061daa2#now-supporting-true-color) - Make Neovim look pretty
