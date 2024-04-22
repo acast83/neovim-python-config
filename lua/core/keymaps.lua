@@ -63,6 +63,7 @@ keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
 keymap.set('n', '<leader>fs', require('telescope.builtin').current_buffer_fuzzy_find, {})
 keymap.set('n', '<leader>fo', require('telescope.builtin').lsp_document_symbols, {})
 keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {})
+vim.api.nvim_set_keymap('n', '<leader>fkm', '<cmd>Telescope keymaps<CR>', {noremap = true, silent = true})
 keymap.set('n', '<leader>fm', function() require('telescope.builtin').treesitter({default_text=":method:"}) end)
 
 
