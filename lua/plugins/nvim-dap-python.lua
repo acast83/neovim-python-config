@@ -23,21 +23,21 @@ return {
     vim.fn.sign_define('DapBreakpointActive', {text = '🔵', texthl = 'Warning'})
 
 
-    -- Configure DAP UI to open automatically when debugging starts
-    dap.listeners.before.attach.dapui_config = function()
-      dapui.open()
-    end
-    dap.listeners.before.launch.dapui_config = function()
-      dapui.open()
-    end
-
-    -- Ensure the DAP UI closes when the debugging session ends
-    dap.listeners.before.event_terminated.dapui_config = function()
-      dapui.close()
-    end
-    dap.listeners.before.event_exited.dapui_config = function()
-      dapui.close()
-    end
+    -- -- Configure DAP UI to open automatically when debugging starts
+    -- dap.listeners.before.attach.dapui_config = function()
+    --   dapui.open()
+    -- end
+    -- dap.listeners.before.launch.dapui_config = function()
+    --   dapui.open()
+    -- end
+    --
+    -- -- Ensure the DAP UI closes when the debugging session ends
+    -- dap.listeners.before.event_terminated.dapui_config = function()
+    --   dapui.close()
+    -- end
+    -- dap.listeners.before.event_exited.dapui_config = function()
+    --   dapui.close()
+    -- end
   end
 }
 
