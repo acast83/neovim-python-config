@@ -148,13 +148,13 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Debugging with Function Keys
-keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F1>", "<cmd>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<F8>", "<cmd>lua require'dap'.clear_breakpoints()<CR>", opts)
-keymap("n", "<F7>", "<cmd>lua require'dap'.repl.toggle()<CR>", opts)
+keymap("n", "<F2>", "<cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F3>", "<cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F4>", "<cmd>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<F5>", "<cmd>lua require'dap'.clear_breakpoints()<CR>", opts)
+keymap("n", "<F6>", "<cmd>lua require'dap'.repl.toggle()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<Leader>B', "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { noremap = true, silent = true })
 
 -- init.lua configuration snippet
