@@ -17,6 +17,12 @@ return {
     -- Loading the required modules for DAP and DAP UI
     local dap, dapui = require("dap"), require("dapui")
 
+
+    -- Define custom breakpoint signs
+    vim.fn.sign_define('DapBreakpoint', {text = '🔴', texthl = 'Error'})
+    vim.fn.sign_define('DapBreakpointActive', {text = '🔵', texthl = 'Warning'})
+
+
     -- Configure DAP UI to open automatically when debugging starts
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
