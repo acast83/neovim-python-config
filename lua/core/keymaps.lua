@@ -107,20 +107,20 @@ keymap.set("n", "<leader>hd9", function() require("harpoon.mark").rm_file(9) end
 keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>") -- Run REST query
 
 -- LSP
-keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
-keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+keymap.set('n', 'gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
+keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 keymap.set('n', '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 keymap.set('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-keymap.set('n', '<leader>gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-keymap.set('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 keymap.set('n', '<leader>gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 keymap.set('n', '<leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>')
 keymap.set('n', '<leader>gf', '<cmd>lua vim.lsp.buf.format({async = true})<CR>')
 keymap.set('v', '<leader>gf', '<cmd>lua vim.lsp.buf.format({async = true})<CR>')
 keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 keymap.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
-keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
-keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+keymap.set('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+keymap.set('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>')
 
@@ -192,5 +192,5 @@ require('nvim-dap-virtual-text').setup({
 })
 
 -- Keybindings to toggle dap-ui elements
-vim.api.nvim_set_keymap('n', '<leader>du', "<cmd>lua require('dapui').toggle()<CR>", { noremap = true, silent = true })
+keymap('n', '<leader>du', "<cmd>lua require('dapui').toggle()<CR>", {desc  = "toggle dap ui elements"})
 
