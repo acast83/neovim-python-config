@@ -1,6 +1,5 @@
 -- Set leader key to space
 vim.g.mapleader = " "
-vim.o.mouse = 'a'
 local keymap = vim.keymap
 
 -- General keymaps
@@ -157,8 +156,6 @@ keymap("n", "<F5>", "<cmd>lua require'dap'.clear_breakpoints()<CR>", opts)
 keymap("n", "<F6>", "<cmd>lua require'dap'.repl.toggle()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<Leader>B', "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { noremap = true, silent = true })
 
--- init.lua configuration snippet
-vim.opt.cursorline = true  -- Highlight the entire line of the cursor
 
 require('dapui').setup( require("dapui").setup({
   layouts = {

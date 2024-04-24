@@ -45,8 +45,11 @@ opt.splitbelow = true
 -- Consider - as part of keyword
 opt.iskeyword:append("-")
 
--- Disable the mouse while in nvim
-opt.mouse = ""
+-- Allow mouse while in nvim
+opt.mouse = "a"
+
+-- init.lua configuration snippet
+vim.opt.cursorline = true  -- Highlight the entire line of the cursor
 
 -- Folding
 opt.foldlevel = 20
