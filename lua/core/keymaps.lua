@@ -59,11 +59,11 @@ keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
 keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
 keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, {})
 keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
-keymap.set('n', '<leader>fs', require('telescope.builtin').current_buffer_fuzzy_find, {})
+keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, {})
 keymap.set('n', '<leader>fo', require('telescope.builtin').lsp_document_symbols, {})
 keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {})
+keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, {desc = 'Search current word'})
 keymap.set('n', '<leader>fkm', '<cmd>Telescope keymaps<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>fkm', '<cmd>Telescope keymaps<CR>', {noremap = true, silent = true})
 keymap.set('n', '<leader>fm', function() require('telescope.builtin').treesitter({default_text=":method:"}) end)
 
 
