@@ -3,6 +3,9 @@ local opt = vim.opt
 -- Session Management
 opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
+-- set the default line lenght for black python formatter
+vim.g.black_linelength = 180
+
 -- Line Numbers
 opt.relativenumber = true
 opt.number = true
