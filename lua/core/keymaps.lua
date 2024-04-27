@@ -158,29 +158,6 @@ keymap("n", "<F6>", "<cmd>lua require'dap'.repl.toggle()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<Leader>B', "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { noremap = true, silent = true })
 
 
-require('dapui').setup( require("dapui").setup({
-  layouts = {
-    {
-      elements = {
-        -- Elements can be "scopes", "breakpoints", "stacks", "watches", or "repl"
-        { id = "scopes", size = 0.25 },  -- Adjust size as a fraction of the screen
-        { id = "breakpoints", size = 0.25 },
-        { id = "stacks", size = 0.25 },
-        { id = "watches", size = 0.25 }
-      },
-      size = 40,  -- Specifies the size of the sidebar
-      position = "left"  -- Sidebar on the left
-    },
-    {
-      elements = {
-        "repl"
-      },
-      size = 10,  -- Smaller size for the lower window
-      position = "bottom"  -- Command line REPL at the bottom
-    }
-  }
-})
-)  -- Set up dap-ui for a better debugging interface
 
 require('nvim-dap-virtual-text').setup({
     enabled = true,  -- Enable virtual text
